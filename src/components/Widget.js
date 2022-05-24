@@ -7,15 +7,13 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 const Widget = ({ type }) => {
   let data;
 
-  //temporary
-  const amount = 100;
-  const diff = 20;
-
   switch (type) {
     case "user":
       data = {
         title: "USERS",
         isMoney: false,
+        amount: 100,
+        diff: 20,
         link: "See all users",
         icon: (
           <PersonOutlinedIcon
@@ -32,6 +30,8 @@ const Widget = ({ type }) => {
       data = {
         title: "ORDERS",
         isMoney: false,
+        amount: 150,
+        diff: 30,
         link: "View all orders",
         icon: (
           <ShoppingCartOutlinedIcon
@@ -48,6 +48,8 @@ const Widget = ({ type }) => {
       data = {
         title: "EARNINGS",
         isMoney: true,
+        amount: 125,
+        diff: 5,
         link: "View net earnings",
         icon: (
           <MonetizationOnOutlinedIcon
@@ -61,6 +63,8 @@ const Widget = ({ type }) => {
       data = {
         title: "BALANCE",
         isMoney: true,
+        amount: 750,
+        diff: 15,
         link: "See details",
         icon: (
           <AccountBalanceWalletOutlinedIcon
@@ -82,14 +86,14 @@ const Widget = ({ type }) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          {data.isMoney && "$"} {data.amount}
         </span>
-        <span className="link">{data.link}</span>
+        <a href="#test" className="link">{data.link}</a>
       </div>
       <div className="right">
         <div className="percentage positive">
           <KeyboardArrowUpIcon />
-          {diff} %
+          {data.diff} %
         </div>
         {data.icon}
       </div>
