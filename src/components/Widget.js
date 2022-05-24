@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
@@ -15,15 +16,7 @@ const Widget = ({ type }) => {
         amount: 100,
         diff: 20,
         link: "See all users",
-        icon: (
-          <PersonOutlinedIcon
-            className="icon"
-            style={{
-              color: "#ed143d",
-              backgroundColor: "rgba(255, 0, 0, 0.2)",
-            }}
-          />
-        ),
+        icon: <Users className="icon" />,
       };
       break;
     case "order":
@@ -33,15 +26,7 @@ const Widget = ({ type }) => {
         amount: 150,
         diff: 30,
         link: "View all orders",
-        icon: (
-          <ShoppingCartOutlinedIcon
-            className="icon"
-            style={{
-              backgroundColor: "rgba(218, 165, 32, 0.2)",
-              color: "#daa520",
-            }}
-          />
-        ),
+        icon: <Orders className="icon" />,
       };
       break;
     case "earning":
@@ -51,12 +36,7 @@ const Widget = ({ type }) => {
         amount: 125,
         diff: 5,
         link: "View net earnings",
-        icon: (
-          <MonetizationOnOutlinedIcon
-            className="icon"
-            style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "008000" }}
-          />
-        ),
+        icon: <Earning className="icon" />,
       };
       break;
     case "balance":
@@ -66,15 +46,7 @@ const Widget = ({ type }) => {
         amount: 750,
         diff: 15,
         link: "See details",
-        icon: (
-          <AccountBalanceWalletOutlinedIcon
-            className="icon"
-            style={{
-              backgroundColor: "rgba(128, 0, 128, 0.2)",
-              color: "#800080",
-            }}
-          />
-        ),
+        icon: <Balance className="icon" />,
       };
       break;
     default:
@@ -88,7 +60,9 @@ const Widget = ({ type }) => {
         <span className="counter">
           {data.isMoney && "$"} {data.amount}
         </span>
-        <a href="#test" className="link">{data.link}</a>
+        <a href="#test" className="link">
+          {data.link}
+        </a>
       </div>
       <div className="right">
         <div className="percentage positive">
@@ -100,5 +74,22 @@ const Widget = ({ type }) => {
     </div>
   );
 };
+
+const Users = styled(PersonOutlinedIcon)`
+  color: #ed143d;
+  background-color: rgba(255, 0, 0, 0.2);
+`;
+const Orders = styled(ShoppingCartOutlinedIcon)`
+  color: #daa520;
+  background-color: rgba(218, 165, 32, 0.2);
+`;
+const Earning = styled(MonetizationOnOutlinedIcon)`
+  color: #008000;
+  background-color: rgba(0, 128, 0, 0.2);
+`;
+const Balance = styled(AccountBalanceWalletOutlinedIcon)`
+  color: #800080;
+  background-color: rgba(128, 0, 128, 0.2);
+`;
 
 export default Widget;
