@@ -1,6 +1,9 @@
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import Widget from '../components/Widget';
+import Feature from '../components/Feature';
+import Chart from '../components/Chart';
+import Table from '../components/Table';
 
 const Home = () => {
   return (
@@ -13,6 +16,14 @@ const Home = () => {
           <Widget type="order" />
           <Widget type="earning" />
           <Widget type="balance" />
+        </div>
+        <div className='home__container__charts'>
+          <Feature />
+          <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
+        </div>
+        <div className='home__container__list'>
+          <div className='home__container__list__header'>Latest Transactions</div>
+          <Table />
         </div>
       </div>      
     </div>
