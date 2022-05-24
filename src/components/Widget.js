@@ -21,7 +21,7 @@ const Widget = ({ type }) => {
           <PersonOutlinedIcon
             className="icon"
             style={{
-              color: "crimson",
+              color: "#ed143d",
               backgroundColor: "rgba(255, 0, 0, 0.2)",
             }}
           />
@@ -38,7 +38,7 @@ const Widget = ({ type }) => {
             className="icon"
             style={{
               backgroundColor: "rgba(218, 165, 32, 0.2)",
-              color: "goldenrod",
+              color: "#daa520",
             }}
           />
         ),
@@ -52,7 +52,7 @@ const Widget = ({ type }) => {
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
-            style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
+            style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "008000" }}
           />
         ),
       };
@@ -67,7 +67,7 @@ const Widget = ({ type }) => {
             className="icon"
             style={{
               backgroundColor: "rgba(128, 0, 128, 0.2)",
-              color: "purple",
+              color: "#800080",
             }}
           />
         ),
