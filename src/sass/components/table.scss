@@ -25,5 +25,9 @@
             color: #daa520;
             background-color: rgba(189, 189, 3, 0.103);
         }
+        &.Cancelled {
+            color: #dc143c;
+            background-color: rgba(220, 20, 60, 0.174);
+        }
     }
 }

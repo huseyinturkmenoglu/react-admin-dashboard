@@ -105,6 +105,7 @@
   justify-content: center;
   align-items: center;
   height: 50px;
+  border-bottom: 0.5px solid rgb(231, 228, 228);
 }
 .sidebar__body {
   display: flex;
@@ -325,6 +326,10 @@
 .table .status.Pending {
   color: #daa520;
   background-color: rgba(189, 189, 3, 0.103);
+}
+.table .status.Cancelled {
+  color: #dc143c;
+  background-color: rgba(220, 20, 60, 0.174);
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -36,7 +36,7 @@ const List = () => {
       date: "1 March",
       amount: 35,
       method: "Cash on Delivery",
-      status: "Pending",
+      status: "Cancelled",
     },
     {
       id: 2357741,
