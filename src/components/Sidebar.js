@@ -1,18 +1,21 @@
 import React from "react";
 import logo from "../images/logo.svg";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-import StoreIcon from "@mui/icons-material/Store";
-import InsertChartIcon from "@mui/icons-material/InsertChart";
-import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
-import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import {
+  DashboardCustomizeOutlined,
+  AccountBalanceOutlined,
+  PersonOutline,
+  LocalShipping,
+  CreditCard,
+  Store,
+  InsertChart,
+  SettingsApplications,
+  ExitToApp,
+  NotificationsNone,
+  SettingsSystemDaydreamOutlined,
+  PsychologyOutlined,
+} from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 function sidebar() {
   return (
@@ -25,62 +28,62 @@ function sidebar() {
       <div className="sidebar__body">
         <ul>
           <p className="title">MAIN</p>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <SideBarLink to="/">
             <li>
-              <DashboardIcon className="icon" />
+              <DashboardCustomizeOutlined className="icon" />
               <span>Dashboard</span>
             </li>
-          </Link>
+          </SideBarLink>
           <p className="title">LISTS</p>
-          <Link to="/users" style={{ textDecoration: "none" }}>
+          <SideBarLink to="/users">
             <li>
-              <PersonOutlineIcon className="icon" />
+              <PersonOutline className="icon" />
               <span>Users</span>
             </li>
-          </Link>
-          <Link to="/products" style={{ textDecoration: "none" }}>
+          </SideBarLink>
+          <SideBarLink to="/products">
             <li>
-              <StoreIcon className="icon" />
+              <Store className="icon" />
               <span>Products</span>
             </li>
-          </Link>
+          </SideBarLink>
           <li>
-            <CreditCardIcon className="icon" />
+            <CreditCard className="icon" />
             <span>Orders</span>
           </li>
           <li>
-            <LocalShippingIcon className="icon" />
+            <LocalShipping className="icon" />
             <span>Delivery</span>
           </li>
           <p className="title">USEFUL</p>
           <li>
-            <InsertChartIcon className="icon" />
+            <InsertChart className="icon" />
             <span>Stats</span>
           </li>
           <li>
-            <NotificationsNoneIcon className="icon" />
+            <NotificationsNone className="icon" />
             <span>Notifications</span>
           </li>
           <p className="title">SERVICE</p>
           <li>
-            <SettingsSystemDaydreamOutlinedIcon className="icon" />
+            <SettingsSystemDaydreamOutlined className="icon" />
             <span>System Health</span>
           </li>
           <li>
-            <PsychologyOutlinedIcon className="icon" />
+            <PsychologyOutlined className="icon" />
             <span>Logs</span>
           </li>
           <li>
-            <SettingsApplicationsIcon className="icon" />
+            <SettingsApplications className="icon" />
             <span>Settings</span>
           </li>
           <p className="title">USER</p>
           <li>
-            <AccountCircleOutlinedIcon className="icon" />
+            <AccountBalanceOutlined className="icon" />
             <span>Profile</span>
           </li>
           <li>
-            <ExitToAppIcon className="icon" />
+            <ExitToApp className="icon" />
             <span>Logout</span>
           </li>
         </ul>
@@ -92,5 +95,9 @@ function sidebar() {
     </div>
   );
 }
+
+const SideBarLink = styled(Link)`
+  text-decoration: none;
+`;
 
 export default sidebar;

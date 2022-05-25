@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import {
+  KeyboardArrowUp,
+  PersonOutlined,
+  AccountBalanceWalletOutlined,
+  ShoppingCartOutlined,
+  MonetizationOnOutlined
+} from "@mui/icons-material";
 
 const Widget = ({ type }) => {
   let data;
@@ -56,38 +58,37 @@ const Widget = ({ type }) => {
   return (
     <div className="widget">
       <div className="left">
-        <span className="title">{data.title}</span>
+        <span className="title">{data.icon}{data.title}</span>
         <span className="counter">
           {data.isMoney && "$"} {data.amount}
         </span>
-        <a href="#test" className="link">
-          {data.link}
-        </a>
       </div>
       <div className="right">
         <div className="percentage positive">
-          <KeyboardArrowUpIcon />
+          <KeyboardArrowUp />
           {data.diff} %
         </div>
-        {data.icon}
+        <a href="#test" className="link">
+          {data.link}
+        </a>
       </div>
     </div>
   );
 };
 
-const Users = styled(PersonOutlinedIcon)`
+const Users = styled(PersonOutlined)`
   color: #ed143d;
   background-color: rgba(255, 0, 0, 0.2);
 `;
-const Orders = styled(ShoppingCartOutlinedIcon)`
+const Orders = styled(ShoppingCartOutlined)`
   color: #daa520;
   background-color: rgba(218, 165, 32, 0.2);
 `;
-const Earning = styled(MonetizationOnOutlinedIcon)`
+const Earning = styled(MonetizationOnOutlined)`
   color: #008000;
   background-color: rgba(0, 128, 0, 0.2);
 `;
-const Balance = styled(AccountBalanceWalletOutlinedIcon)`
+const Balance = styled(AccountBalanceWalletOutlined)`
   color: #800080;
   background-color: rgba(128, 0, 128, 0.2);
 `;

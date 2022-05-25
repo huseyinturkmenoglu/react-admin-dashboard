@@ -9,12 +9,15 @@
     height: 100px;
 
     .left,
-    .right {
+    .right{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
   
       .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         font-weight: bold;
         font-size: 14px;
         color: #a0a0a0;
@@ -32,7 +35,7 @@
         color: #808080;
         text-decoration: none;
       }
-  
+
       .percentage {
         display: flex;
         align-items: center;
@@ -45,12 +48,16 @@
           color: #ff0000;
         }
       }
-  
+      
       .icon {
         font-size: 18px;
         padding: 5px;
         border-radius: 5px;
-        align-self: flex-end;
+        margin-right: 8px;
       }
+    }
+
+    .right {
+      align-items: flex-end;
     }
 }

@@ -2,8 +2,9 @@ import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../datatablesource";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import styled from "styled-components";
 
-const Datatable = () => {
+const Datatable = ({ addNewTitle, url }) => {
   const [data, setData] = useState(userRows);
 
   const handleDelete = (id) => {
@@ -18,9 +19,9 @@ const Datatable = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/users/test" style={{ textDecoration: "none" }}>
+            <TableLink to="/users/test">
               <div className="viewButton">View</div>
-            </Link>
+            </TableLink>
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row.id)}
@@ -35,8 +36,8 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
-        <Link to="/users/new" className="link">
+        {addNewTitle}
+        <Link to={url} className="link">
           Add New
         </Link>
       </div>
@@ -51,5 +52,9 @@ const Datatable = () => {
     </div>
   );
 };
+
+const TableLink = styled(Link)`
+  text-decoration: none;
+`;
 
 export default Datatable;

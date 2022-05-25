@@ -39,6 +39,71 @@
   flex: 6;
 }
 
+.new {
+  width: 100%;
+  display: flex;
+}
+.new__container {
+  flex: 6;
+}
+.new__container__top, .new__container__bottom {
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+}
+.new__container__top h1, .new__container__bottom h1 {
+  color: #d3d3d3;
+  font-size: 20px;
+}
+.new__container__top .left, .new__container__bottom .left {
+  flex: 1;
+  text-align: center;
+}
+.new__container__top .left img, .new__container__bottom .left img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.new__container__top .right, .new__container__bottom .right {
+  flex: 2;
+}
+.new__container__top .right form, .new__container__bottom .right form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-around;
+}
+.new__container__top .right form .formInput, .new__container__bottom .right form .formInput {
+  width: 40%;
+}
+.new__container__top .right form .formInput label, .new__container__bottom .right form .formInput label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.new__container__top .right form .formInput label .icon, .new__container__bottom .right form .formInput label .icon {
+  cursor: pointer;
+}
+.new__container__top .right form .formInput input, .new__container__bottom .right form .formInput input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #808080;
+}
+.new__container__top .right form button, .new__container__bottom .right form button {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  background-color: #008080;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
 .single {
   display: flex;
   width: 100%;
@@ -263,6 +328,9 @@
 }
 .widget .left .title,
 .widget .right .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: bold;
   font-size: 14px;
   color: #a0a0a0;
@@ -299,7 +367,10 @@
   font-size: 18px;
   padding: 5px;
   border-radius: 5px;
-  align-self: flex-end;
+  margin-right: 8px;
+}
+.widget .right {
+  align-items: flex-end;
 }
 
 .chart {
