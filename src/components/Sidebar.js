@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext } from "react";
 import logo from "../images/logo.svg";
 import {
   DashboardCustomizeOutlined,
@@ -15,16 +15,21 @@ import {
   PsychologyOutlined,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled from "styled-components"
+import { DarkModeContext } from "../context/darkModeContext";
 
-function sidebar() {
+function Sidebar() {
+  const { dispatch } = useContext(DarkModeContext);
+
   return (
     <div className="sidebar">
-      <div className="sidebar__header">
-        <div className="sidebar__header__logo">
-          <img src={logo} alt="logo" />
+      <SideBarLink to="/">
+        <div className="sidebar__header">
+          <div className="sidebar__header__logo">
+            <img src={logo} alt="logo" />
+          </div>
         </div>
-      </div>
+      </SideBarLink>
       <div className="sidebar__body">
         <ul>
           <p className="title">MAIN</p>
@@ -89,8 +94,8 @@ function sidebar() {
         </ul>
       </div>
       <div className="sidebar__footer">
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
+        <div className="colorOption" onClick={() => dispatch({type: "LIGHT"})}></div>
+        <div className="colorOption" onClick={() => dispatch({type: "DARK"})}></div>
       </div>
     </div>
   );
@@ -100,4 +105,4 @@ const SideBarLink = styled(Link)`
   text-decoration: none;
 `;
 
-export default sidebar;
+export default Sidebar;

@@ -216,6 +216,7 @@
 }
 .navbar__menu-item .icon {
   font-size: 20px;
+  cursor: pointer;
 }
 .navbar__menu-item .avatar {
   width: 30px;
@@ -550,6 +551,61 @@
   color: #dc143c;
   border: 1px dotted rgba(220, 20, 60, 0.6);
   cursor: pointer;
+}
+
+.dark {
+  background-color: #1d1d1d;
+  color: rgb(156, 156, 156);
+}
+.dark .chartGrid {
+  stroke: rgba(228, 228, 228, 0.219);
+}
+.dark .table {
+  background-color: #1d1d1d;
+}
+.dark .table .tableCell {
+  color: gray;
+}
+.dark .navbar {
+  color: #999;
+  border-color: #333;
+}
+.dark .navbar__container__search {
+  border-color: #808080;
+}
+.dark .navbar__container .dark-mode {
+  color: #ffff00;
+  stroke: rgb(255, 213, 0);
+}
+.dark .sidebar {
+  background-color: #111;
+  border-color: #333;
+}
+.dark .sidebar__header {
+  border-color: #333;
+}
+.dark .sidebar__header__logo {
+  color: #999;
+}
+.dark .sidebar ul li:hover {
+  background-color: #333;
+}
+.dark .sidebar ul li .icon {
+  color: #999;
+}
+.dark .datatable .datagrid {
+  color: #808080;
+  border: none;
+}
+.dark .datatable .datagrid .viewButton,
+.dark .datatable .datagrid .deleteButton,
+.dark .datatable .datagrid .cellWithStatus {
+  color: #808080;
+  border: none;
+}
+.dark input {
+  border-color: transparent;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=index.css.map */
