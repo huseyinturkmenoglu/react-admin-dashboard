@@ -1,7 +1,7 @@
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
-import Chart from '../components/Chart';
-import Table from '../components/Table';
+import Chart from "../components/Chart";
+import Table from "../components/Table";
 
 const Single = () => {
   return (
@@ -43,7 +43,7 @@ const Single = () => {
             </div>
           </div>
           <div className="right">
-            <Chart />
+            <Chart title="User Spending ( Last 6 Months )" aspect={3 / 1} />
           </div>
         </div>
         <div className="single__container__bottom">
