@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { AuthContext } from "../context/authContext";
 import logo from "../images/logo.svg";
 
-const Login = () => {
+const NewAccount = () => {
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,17 +17,19 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    signInWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user ? true : false;
         dispatchAuth({ type: "LOGIN", payload: user });
         navitage("/");
+        console.log(user);
       })
       .catch((error) => {
         setError(true);
       });
   };
+
   return (
     <div className="login">
       <form className="login__form" onSubmit={handleLogin}>
@@ -35,6 +37,8 @@ const Login = () => {
           <img src={logo} alt="logo" />
           <h1>React Admin Dashboard Demo</h1>
         </div>
+        <p>You can create easily account for demo platform.</p>
+        <p>Just create a random mail and password, please take a note 😊</p>
         <input
           type="email"
           placeholder="email"
@@ -48,13 +52,8 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit" className="login__form__btn">
-          Login
+          Create New Account
         </button>
-        <Link to="/singup">
-          <button type="submit" className="login__form__btn">
-            Create New Account
-          </button>
-        </Link>
         {error && (
           <span className="login__form__error">Wrong email or password!</span>
         )}
@@ -63,4 +62,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default NewAccount;

@@ -67,6 +67,7 @@
 .login__form__btn {
   width: 200px;
   height: 30px;
+  margin-bottom: 10px;
   border: none;
   background-color: #000d80;
   color: #ffffff;
