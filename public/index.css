@@ -144,6 +144,10 @@
   cursor: pointer;
   margin-top: 10px;
 }
+.new__container__top .right form button:disabled, .new__container__bottom .right form button:disabled {
+  background-color: rgba(0, 128, 128, 0.404);
+  cursor: progress;
+}
 
 .single {
   display: flex;
