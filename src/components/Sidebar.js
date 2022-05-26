@@ -15,11 +15,22 @@ import {
   PsychologyOutlined,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import styled from "styled-components"
+import styled from "styled-components";
 import { DarkModeContext } from "../context/darkModeContext";
+import { AuthContext } from "../context/authContext";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
+  const navitage = useNavigate();
   const { dispatch } = useContext(DarkModeContext);
+  const { dispatchAuth } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    dispatchAuth({ type: "LOGOUT", payload: null });
+    navitage("/");
+  };
 
   return (
     <div className="sidebar">
@@ -87,15 +98,21 @@ function Sidebar() {
             <AccountBalanceOutlined className="icon" />
             <span>Profile</span>
           </li>
-          <li>
+          <li onClick={handleLogin}>
             <ExitToApp className="icon" />
             <span>Logout</span>
           </li>
         </ul>
       </div>
       <div className="sidebar__footer">
-        <div className="colorOption" onClick={() => dispatch({type: "LIGHT"})}></div>
-        <div className="colorOption" onClick={() => dispatch({type: "DARK"})}></div>
+        <div
+          className="colorOption"
+          onClick={() => dispatch({ type: "LIGHT" })}
+        ></div>
+        <div
+          className="colorOption"
+          onClick={() => dispatch({ type: "DARK" })}
+        ></div>
       </div>
     </div>
   );

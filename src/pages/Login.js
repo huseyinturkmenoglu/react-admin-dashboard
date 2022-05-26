@@ -13,7 +13,7 @@ const Login = () => {
 
   const navitage = useNavigate();
 
-  const { dispatch } = useContext(AuthContext);
+  const { dispatchAuth } = useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,9 +22,9 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
-        dispatch({ type: "LOGIN", payload: user });
+        dispatchAuth({ type: "LOGIN", payload: user });
         navitage("/");
+        console.log(user);
       })
       .catch((error) => {
         setError(true);

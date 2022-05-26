@@ -7,11 +7,14 @@ import Single from "./pages/Single";
 import { userInputs, productInputs } from "./formSource";
 import { DarkModeContext } from "./context/darkModeContext";
 import { useContext } from "react";
+import { AuthContext } from "./context/authContext";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
-  const currentUser = false;
+  const { currentUser } =useContext(AuthContext);
+
+  console.dir(currentUser);
 
   const RequireAuth = ({ children }) => {
     return currentUser ? children : <Navigate to="/login" />;
