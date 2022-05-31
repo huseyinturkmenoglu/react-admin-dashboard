@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   collection,
-  getDocs,
   deleteDoc,
   doc,
   onSnapshot,
