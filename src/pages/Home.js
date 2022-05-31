@@ -4,12 +4,21 @@ import Widget from "../components/Widget";
 import Feature from "../components/Feature";
 import Chart from "../components/Chart";
 import Table from "../components/Table";
+import { useState } from "react";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Home = () => {
+  const [openMobileSidebar, setOpenMobileSidebar] = useState(false);
+
+  const handleMobileSidebar = () => {
+    setOpenMobileSidebar(!openMobileSidebar);
+  };
+
   return (
     <div className="home">
-      <Sidebar />
+      <Sidebar openMobileSidebar={openMobileSidebar} />
       <div className="home__container">
+        <MenuIcon className="mobile-menu" onClick={handleMobileSidebar}>Show Menu</MenuIcon>
         <Navbar />
         <div className="home__container__content">
           <Widget type="user" />

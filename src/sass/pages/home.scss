@@ -8,10 +8,20 @@
             display: flex;
             padding: 20px;
             gap: 20px;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                max-width: 80vw;
+                padding: 20px 10px;
+            }
         }
 
         &__charts {
             padding: 5px 20px;
+
+            @media screen and (max-width: 768px) {
+                padding: 10px 10px;
+            }
         }
 
         &__list {
@@ -25,6 +35,22 @@
                 color: #808080;
                 margin-bottom: 15px;
             }
+
+            @media screen and (max-width: 768px) {
+                width: 75vw;
+            }
+        }
+    }
+
+    .mobile-menu {
+        display: none;
+
+        @media screen and (max-width: 768px) {
+            display: inline;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 15px;
         }
     }
 }

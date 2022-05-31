@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className="navbar__menu">
           <div className="navbar__menu-item">
             <LanguageOutlinedIcon className="icon" />
-            English
+            <span className="text">English</span>
           </div>
           <div className="navbar__menu-item">
             <DarkModeOutlinedIcon className="icon dark-mode" onClick={() => dispatch({type: "TOGGLE"})} />

@@ -1,72 +1,92 @@
 .navbar {
-    height: 50px;
-    border-bottom: 0.5px solid rgb(231, 228, 228);
+  height: 50px;
+  border-bottom: 0.5px solid rgb(231, 228, 228);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+
+  &__container {
+    width: 100%;
+    padding: 20px;
     display: flex;
     align-items: center;
-    font-size: 14px;
-    color: #555;
+    justify-content: space-between;
 
-    &__container {
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    &__search {
+      display: flex;
+      align-items: center;
+      border: 0.5px solid #d3d3d3;
+      padding: 3px;
 
-        &__search {
-            display: flex;
-            align-items: center;
-            border: 0.5px solid #d3d3d3;
-            padding: 3px;
+      input {
+        border: none;
+        outline: none;
+        background: transparent;
 
-            input {
-                border: none;
-                outline: none;
-                background: transparent;
-
-                &::placeholder {
-                font-size: 12px;
-                }
-            }
+        &::placeholder {
+          font-size: 12px;
         }
+      }
+
+      @media screen and (max-width: 768px) {
+        margin-bottom: 10px;
+      }
     }
 
-    &__menu {
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 0px 20px 10px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      position: relative;
+
+      .icon {
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .text {
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      .avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      .counter {
+        width: 15px;
+        height: 15px;
+        background-color: #ff0000;
+        border-radius: 50%;
+        color: #ffffff;
         display: flex;
         align-items: center;
-
-        &-item {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-            position: relative;
-    
-            .icon {
-              font-size: 20px;
-              cursor: pointer;
-            }
-    
-            .avatar {
-              width: 30px;
-              height: 30px;
-              border-radius: 50%;
-            }
-    
-            .counter {
-              width: 15px;
-              height: 15px;
-              background-color: #ff0000;
-              border-radius: 50%;
-              color: #ffffff;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: 10px;
-              font-weight: bold;
-              position: absolute;
-              top: -5px;
-              right: -5px;
-            }
-          }
+        justify-content: center;
+        font-size: 10px;
+        font-weight: bold;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+      }
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    height: unset;
+  }
 }

@@ -26,6 +26,7 @@
       .counter {
         font-size: 28px;
         font-weight: 300;
+        margin-top: 16px;
       }
   
       .link {
@@ -59,5 +60,9 @@
 
     .right {
       align-items: flex-end;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 75vw;
     }
 }

@@ -6,11 +6,13 @@ import { useEffect, useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { useNavigate } from "react-router-dom";
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
   const [data, setData] = useState({});
   const [percentange, setPercentange] = useState({});
+  const navigate = useNavigate();
 
   const handleInput = (e) => {
     const { id, value } = e.target;
@@ -20,11 +22,15 @@ const New = ({ inputs, title }) => {
 
   const handleAdd = async (e) => {
     e.preventDefault();
-
-    await addDoc(collection(db, "users"), {
-      ...data,
-      timeStampe: serverTimestamp(),
-    });
+    try {
+      await addDoc(collection(db, "users"), {
+        ...data,
+        timeStampe: serverTimestamp(),
+      });
+      navigate(-1);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
